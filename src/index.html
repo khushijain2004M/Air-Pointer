@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; worker-src 'self' blob:;" />
+    <title>Air Pointer // Neural Control</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="titlebar">
+      <div class="brand-mark"><i></i><i></i><i></i></div>
+      <strong>AIR//POINTER</strong>
+      <span class="version">NEURAL INTERFACE 2.0</span>
+      <div id="modelStatus" class="model-status"><i></i><span>Initializing neural core</span></div>
+    </header>
+
+    <main>
+      <section class="stage" aria-label="Camera tracking view">
+        <video id="camera" autoplay playsinline muted></video>
+        <canvas id="overlay"></canvas>
+        <div class="camera-shade"></div>
+        <div class="scan-line"></div>
+        <div class="corner corner-tl"></div><div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div><div class="corner corner-br"></div>
+
+        <div class="stage-top">
+          <div class="status-pill"><i></i><span id="trackingLabel">Tracking off</span></div>
+          <div class="telemetry"><span>HAND 01</span><b id="fps">-- FPS</b></div>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="radar"><div class="radar-ring r1"></div><div class="radar-ring r2"></div><div class="radar-core"><span></span><span></span><span></span><span></span><i></i></div></div>
+          <h1>Place hand in field</h1>
+          <p>One hand. Palm toward camera. Keep the wrist visible.</p>
+        </div>
+
+        <div class="stage-bottom">
+          <div class="gesture-readout">
+            <small>GESTURE SIGNAL</small>
+            <strong id="gestureName">Waiting</strong>
+            <span id="gestureHint">Show one hand to begin</span>
+          </div>
+          <button id="toggleTracking" class="primary-button" disabled>
+            <span class="power-icon"></span><span>Start control</span>
+          </button>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-heading">
+          <div><small>COMMAND MATRIX</small><h2>Finger actions</h2></div>
+          <button id="cameraToggle" class="icon-button" title="Restart camera" aria-label="Restart camera"><span class="camera-icon"></span></button>
+        </div>
+
+        <section class="control-section gestures">
+          <div class="gesture-row" data-action="move"><span class="finger-code">01</span><div><strong>Index point</strong><span>Move cursor</span></div><kbd>MOVE</kbd></div>
+          <div class="gesture-row" data-action="index"><span class="finger-code">02</span><div><strong>Index pinch</strong><span>Tap click / hold drag</span></div><kbd>CLICK</kbd></div>
+          <div class="gesture-row" data-action="middle"><span class="finger-code">03</span><div><strong>Middle pinch</strong><span>Context menu</span></div><kbd>RIGHT</kbd></div>
+          <div class="gesture-row" data-action="ring"><span class="finger-code">04</span><div><strong>Ring pinch</strong><span>Open item</span></div><kbd>DOUBLE</kbd></div>
+          <div class="gesture-row" data-action="pinky"><span class="finger-code">05</span><div><strong>Pinky pinch</strong><span>Lock cursor position</span></div><kbd>LOCK</kbd></div>
+          <div class="gesture-row" data-action="scroll"><span class="finger-code double">II</span><div><strong>Two fingers</strong><span>Vertical scroll</span></div><kbd>SCROLL</kbd></div>
+          <div class="gesture-row" data-action="hold"><span class="finger-code palm">V</span><div><strong>Open palm</strong><span>Steady hold</span></div><kbd>PAUSE</kbd></div>
+        </section>
+
+        <section class="control-section settings">
+          <div class="section-title"><h3>Motion engine</h3><span>LIVE TUNING</span></div>
+          <label><span>Stability <output id="stabilityValue">82%</output></span><input id="stability" type="range" min="45" max="95" value="82" /></label>
+          <label><span>Cursor speed <output id="speedValue">1.0x</output></span><input id="speed" type="range" min="65" max="135" value="100" /></label>
+          <label><span>Pinch sensitivity <output id="pinchValue">38%</output></span><input id="pinch" type="range" min="28" max="52" value="38" /></label>
+        </section>
+
+        <section class="control-section safety">
+          <span class="shield-icon">!</span>
+          <div><strong>Emergency disconnect</strong><span>Stops control and releases drag</span></div>
+          <kbd>CTRL SHIFT Q</kbd>
+        </section>
+      </aside>
+    </main>
+    <script type="module" src="renderer.js"></script>
+  </body>
+</html>

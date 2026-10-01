@@ -1,0 +1,44 @@
+{
+  "name": "air-pointer",
+  "version": "1.0.0",
+  "description": "Control the Windows cursor with hand gestures.",
+  "main": "src/main.js",
+  "scripts": {
+    "postinstall": "node scripts/setup-model.mjs",
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^0.10.22-rc.20250304"
+  },
+  "devDependencies": {
+    "electron": "^44.5.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.airpointer.desktop",
+    "productName": "Air Pointer",
+    "artifactName": "Air-Pointer-Setup-${version}.${ext}",
+    "asar": false,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/@mediapipe/tasks-vision/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": ["nsis"]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Air Pointer"
+    }
+  }
+}

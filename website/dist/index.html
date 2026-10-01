@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Air Pointer turns your webcam and hand gestures into a stable Windows mouse." />
+    <meta name="theme-color" content="#050611" />
+    <title>Air Pointer | Control Windows with your hand</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav" id="top">
+      <a class="brand" href="#top" aria-label="Air Pointer home">
+        <span class="signal"><i></i><i></i><i></i></span>
+        <strong>AIR//POINTER</strong>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#gestures">Gestures</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#requirements">Requirements</a>
+      </nav>
+      <a class="nav-download software-download" href="https://github.com/sudesh4545/Air-Pointer/releases/download/v1.0.0/Air-Pointer-Setup-1.0.0.exe">Download</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img src="assets/air-pointer-hero.png" alt="A hand controlling a digital cursor through gesture tracking" />
+        <div class="hero-overlay"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><i></i> WINDOWS GESTURE CONTROL</div>
+          <h1>Air Pointer</h1>
+          <p>Move, click, drag and scroll without touching your mouse. Your webcam tracks one hand locally and turns deliberate gestures into stable cursor control.</p>
+          <div class="hero-actions">
+            <a class="download-button software-download" href="https://github.com/sudesh4545/Air-Pointer/releases/download/v1.0.0/Air-Pointer-Setup-1.0.0.exe">
+              <span class="download-icon" aria-hidden="true"></span>
+              <span><strong>Download for Windows</strong><small>Version 1.0.0 · 118 MB</small></span>
+            </a>
+            <a class="text-link" href="demo/">Try live demo</a>
+          </div>
+          <div class="compatibility"><span>Windows 10/11</span><span>64-bit</span><span>Webcam required</span></div>
+        </div>
+        <a class="scroll-cue" href="#gestures" aria-label="Scroll to gestures"><span></span></a>
+      </section>
+
+      <section class="gesture-section" id="gestures">
+        <div class="section-intro reveal">
+          <span class="section-index">01 // INPUT MAP</span>
+          <h2>Your hand is the controller.</h2>
+          <p>Actions only trigger after a gesture stays clear for several frames. Small shakes are ignored by the motion engine.</p>
+        </div>
+        <div class="gesture-grid">
+          <article class="gesture-item reveal"><span class="number">01</span><div class="gesture-symbol">I</div><h3>Point</h3><p>Raise only your index finger to move the cursor.</p><b>MOVE</b></article>
+          <article class="gesture-item reveal"><span class="number">02</span><div class="gesture-symbol pinch">I</div><h3>Index pinch</h3><p>Quick release clicks once. Hold for 450 ms to drag.</p><b>CLICK / DRAG</b></article>
+          <article class="gesture-item reveal"><span class="number">03</span><div class="gesture-symbol pinch">II</div><h3>Middle pinch</h3><p>Open the right-click context menu.</p><b>RIGHT CLICK</b></article>
+          <article class="gesture-item reveal"><span class="number">04</span><div class="gesture-symbol pinch">III</div><h3>Ring pinch</h3><p>Double-click to open a file or application.</p><b>DOUBLE CLICK</b></article>
+          <article class="gesture-item reveal"><span class="number">05</span><div class="gesture-symbol pinch">IV</div><h3>Pinky pinch</h3><p>Lock the cursor exactly where it is.</p><b>CURSOR LOCK</b></article>
+          <article class="gesture-item reveal"><span class="number">06</span><div class="gesture-symbol">II</div><h3>Two fingers</h3><p>Move vertically for smooth scrolling.</p><b>SCROLL</b></article>
+        </div>
+      </section>
+
+      <section class="engine-section">
+        <div class="engine-copy reveal">
+          <span class="section-index">02 // MOTION ENGINE</span>
+          <h2>Steady when you stop.<br />Fast when you move.</h2>
+          <p>Adaptive smoothing filters tiny landmark changes while keeping large movements responsive. Pinch distance is normalized to your hand size, so gestures remain consistent when you move closer to the camera.</p>
+        </div>
+        <div class="engine-display reveal" aria-label="Motion stabilization visualization">
+          <div class="axis y"></div><div class="axis x"></div>
+          <div class="noise-path"></div><div class="stable-path"></div>
+          <span class="point p1"></span><span class="point p2"></span><span class="point p3"></span>
+          <div class="engine-label"><span>RAW HAND SIGNAL</span><b>STABILIZED OUTPUT</b></div>
+        </div>
+      </section>
+
+      <section class="privacy-section" id="privacy">
+        <div class="privacy-mark reveal"><span></span><i></i></div>
+        <div class="privacy-copy reveal">
+          <span class="section-index">03 // LOCAL VISION</span>
+          <h2>Your camera stays on your computer.</h2>
+          <p>Air Pointer processes the webcam feed locally. The app does not upload, store or transmit your camera video.</p>
+        </div>
+        <div class="privacy-facts reveal"><div><strong>0</strong><span>Cloud uploads</span></div><div><strong>1</strong><span>Hand tracked</span></div><div><strong>21</strong><span>Landmark points</span></div></div>
+      </section>
+
+      <section class="requirements" id="requirements">
+        <div class="section-intro reveal"><span class="section-index">04 // SYSTEM</span><h2>Ready for your Windows laptop.</h2></div>
+        <div class="requirements-list reveal">
+          <div><span>Operating system</span><strong>Windows 10 or 11, 64-bit</strong></div>
+          <div><span>Camera</span><strong>Built-in or USB webcam</strong></div>
+          <div><span>Memory</span><strong>4 GB RAM minimum</strong></div>
+          <div><span>Processor</span><strong>Modern Intel or AMD CPU</strong></div>
+        </div>
+        <p class="install-note reveal"><strong>Beta note:</strong> the installer is not code-signed yet, so Windows SmartScreen may ask you to confirm before installation.</p>
+      </section>
+
+      <section class="final-download">
+        <div class="final-grid"></div>
+        <div class="reveal"><span class="section-index">AIR POINTER 1.0</span><h2>Move beyond the mouse.</h2><p>Install, allow camera access, show one hand and start control.</p></div>
+        <a class="download-button software-download reveal" href="https://github.com/sudesh4545/Air-Pointer/releases/download/v1.0.0/Air-Pointer-Setup-1.0.0.exe"><span class="download-icon"></span><span><strong>Download installer</strong><small>Windows x64 · 118 MB</small></span></a>
+      </section>
+    </main>
+
+    <footer><a class="brand" href="#top"><span class="signal"><i></i><i></i><i></i></span><strong>AIR//POINTER</strong></a><span>Hand gesture control for Windows</span><span>Version 1.0.0</span></footer>
+    <div class="download-progress" id="downloadProgress" role="status" aria-live="polite"><span></span><div><strong>Preparing installer</strong><small id="downloadStatus">Starting download...</small></div><button id="cancelDownload" type="button">Cancel</button></div>
+    <script src="script.js"></script>
+  </body>
+</html>
