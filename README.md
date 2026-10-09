@@ -25,8 +25,8 @@ Allow camera access when Windows asks. Stability defaults to 82%, which ignores 
 
 The install step downloads the official MediaPipe hand landmark model and verifies its SHA-256 checksum. No camera video is uploaded. To build a Windows installer, run `npm run dist:win`.
 
-Live website: https://sudesh4545.github.io/Air-Pointer/
+Live website: deployment in progress.
 
-Browser demo: https://sudesh4545.github.io/Air-Pointer/demo/. It controls an on-page cursor; Windows system control requires this desktop app.
+Browser demo: deployment in progress. It controls an on-page cursor; Windows system control requires this desktop app.
 
-Download the Windows installer from https://github.com/sudesh4545/Air-Pointer/releases/latest.
+The Windows installer will be published from the repository releases page.
